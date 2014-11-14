@@ -10,8 +10,9 @@
 	<div id="container">
 		<div class="user_nav">
 			<% if current_user %>
-				E-mail: <% current_user.email %>
+				E-mail: <%= current_user.email %>
 				<%= link_to "Log out", logout_path %>
+				<%= link_to "Edit profile", edit_user_path(current_user) %>
 			<% else %>
 				<%= link_to "Sign up", signup_path %> or
 				<%= link_to "log in", login_path %>
