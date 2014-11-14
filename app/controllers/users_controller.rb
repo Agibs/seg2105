@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to @user, :notice => "Profile updated"
@@ -34,6 +33,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-  	params.require(:user).permit(:email, :password, :password_confirmation)
+  	params.require(:user).permit(:email, :password, :password_confirmation, :name, :age, :height, :goal, :weight)
   end
 end
